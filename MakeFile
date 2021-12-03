@@ -1,0 +1,22 @@
+all: lab4
+
+lab4: sorts.o log.o interface.o file.o lab4.o
+	cc sorts.o log.o interface.o file.o lab4.o -o lab4 -std=c11 -lreadline -g
+
+sorts.o:
+	cc -c sorts/sorts.c -std=c11
+
+log.o:
+	cc -c log/log.c -std=c11
+
+lab4.o: 
+	cc -c lab4.c -std=c11
+
+interface.o:
+	cc -c interface/interface.c -std=c11
+
+file.o:
+	cc -c interface/file.c -std=c11
+
+clean:
+	rm -rf *.o lab4

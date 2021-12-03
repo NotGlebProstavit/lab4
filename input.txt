@@ -1,0 +1,4 @@
+0,DEBUG,First text
+10,ERROR,NullPointerException
+5,WARN,int is not double
+2,FATAL,SEGMENTATION FALL
