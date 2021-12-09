@@ -24,5 +24,5 @@ void insertToSorted(Log** logs, int* n, const Log* log, int(*comp)(const Log*, c
 			break;
 		}
 	}	
-	insertByIndex(logs, n, i, log);
+	insertByIndex(logs, n, i+1, log);
 }
