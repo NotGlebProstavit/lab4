@@ -20,8 +20,8 @@ typedef struct Log{
 } Log;
 
 char* logToString(const Log*);
-
 char* levelToString(ImportanceLevel);
+ImportanceLevel stringToLevel(char*);
 
 int compID(const Log*, const Log*);
 int compLevel(const Log*, const Log*);

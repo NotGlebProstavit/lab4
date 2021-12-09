@@ -1,0 +1,48 @@
+#include "console.h"
+
+void consoleInput(Log** logs, int* len){
+	if(*logs != NULL){
+		for(int i = 0; i < *len; i++){
+			free((*logs)[i].text);
+		}
+		free(logs);
+	}
+
+	printf("How many logs do you input?\n");
+	printf("Your answer: ");
+	scanf("%d", len);
+	*logs = (Log*) malloc((*len)*sizeof(Log));
+	for(int i = 0; i < (*len); i++){
+		printf("-------------------------------\n");
+		printf("ID: ");
+		scanf("%d", &((*logs)[i].ID));
+		char* strLevel = readline("LEVEL (DEBUG, INFO, WARN, ERROR, FATAL): ");
+		(*logs)[i].level = stringToLevel(strLevel);
+		(*logs)[i].text = readline("TEXT: ");
+	}
+	printf("-------------------------------\n");
+}
+
+void consoleOutput(const Log* logs, int n){
+	printf("-------------------------------\n");
+	for(int i = 0; i < n; i++){
+		char* text = logToString(logs+i);
+		printf("%s\n", text);
+		free(text);
+	}
+	printf("-------------------------------\n");
+}
+
+Log* consoleInputLog(Log* log){
+	printf("Insert data:\n");
+	printf(" ID: ");
+	int ID;
+	scanf("%d", &ID);
+	log->ID = ID;
+	char* strLine = readline(" LEVEL (DEBUG, INFO, WARN, ERROR, FATAL): ");
+	ImportanceLevel level = stringToLevel(strLine);
+	log->level = level;
+	free(strLine);
+	log->text = readline(" TEXT: ");
+	return log;
+}

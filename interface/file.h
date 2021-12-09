@@ -6,7 +6,7 @@
 #include "unistd.h"
 #include "../log/log.h"
 
-int fileInput(Log*, char*);
+int fileInput(Log**, const char*);
 void fileOutput(const Log*, int, char*);
 
 #endif

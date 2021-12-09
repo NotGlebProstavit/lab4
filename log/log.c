@@ -35,6 +35,14 @@ char* levelToString(ImportanceLevel level){
     }
 }
 
+ImportanceLevel stringToLevel(char* str){
+	if(strcmp(str, "DEBUG") == 0) return DEBUG;
+	if(strcmp(str, "INFO") == 0) return INFO;
+	if(strcmp(str, "WARN") == 0) return WARN;
+	if(strcmp(str, "ERROR") == 0) return ERROR;
+	if(strcmp(str, "FATAL") == 0) return FATAL;
+}
+
 char* logToString(const Log* log){
     int ID = log->ID;
     int m = 1;
