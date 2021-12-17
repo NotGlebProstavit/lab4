@@ -16,7 +16,7 @@ void fileInput(Log** logs, int* n){
         *n = 0;
 		return;
 	}
-	if(*logs != NULL) freeAll(*logs, *n);
+	if(*logs != NULL) freeAll(logs, *n);
 
 	while(!feof(fm)){
 		if(!freadline(fm)) break;
