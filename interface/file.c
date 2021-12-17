@@ -27,9 +27,7 @@ void fileInput(Log** logs, int* n){
 	int i = 0;
 	while(!feof(fm)){
 		if((buf = freadline(fm)) != NULL){
-		
 			char* cLine = strdup(buf);
-			cLine[strlen(cLine)-1] = '\0';
 			char* strID = strtok(cLine, ",");
 			char* strLevel = strtok(NULL, ",");
 			char* text = strtok(NULL, ",");

@@ -93,6 +93,7 @@ void update(Log** logs, int* len, int* sorted){
             }while(1);
             deleteNFrom(logs, len, from, m);
             *sorted = -1;
+            break;
         }
         case 4:{
             printSortMenu();

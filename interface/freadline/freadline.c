@@ -1,6 +1,3 @@
-//
-// Created by vpust on 16.12.2021.
-//
 #include "freadline.h"
 
 char* freadline(FILE* fm){
@@ -23,7 +20,7 @@ char* freadline(FILE* fm){
             len = str_len;
         }
         else {
-            scanf("%*c");
+            fscanf(fm, "%*c");
         }
     } while (n > 0);
 
@@ -33,6 +30,5 @@ char* freadline(FILE* fm){
     else {
         res = calloc(1, sizeof(char));
     }
-
     return res;
 }
