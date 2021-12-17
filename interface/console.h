@@ -1,5 +1,5 @@
 #ifndef LAB4_CONSOLE_H
-#define LAB$_CONSOLE_H
+#define LAB4_CONSOLE_H
 
 #include "stdio.h"
 #include "../log/log.h"

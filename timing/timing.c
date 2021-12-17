@@ -1,13 +1,9 @@
-//
-// Created by vpust on 16.12.2021.
-//
-
 #include "timing.h"
 
 double getAverage(int len, void*(*sort)(void*, size_t, size_t, int(*)(const void*, const void*))){
     double sum = 0.0;
     Log* logs = (Log*) malloc(len* sizeof(Log));
-    generateNLog(time(NULL), len, &logs);
+    generateNLog(time(NULL), len, logs);
     for(int k = 0; k < 8; k++){
         clock_t begin = clock();
         sort(logs, len, sizeof(Log), (int (*)(const void *, const void *)) compID);

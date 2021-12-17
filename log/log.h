@@ -1,6 +1,6 @@
 #ifndef LAB4_LOG_H
 #define LAB4_LOG_H
-
+#define _POSIX_C_SOURCE 200809L
 #include "string.h"
 #include "stdlib.h"
 #include "stdio.h"

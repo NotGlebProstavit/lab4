@@ -1,7 +1,3 @@
-//
-// Created by vpust on 16.12.2021.
-//
-
 #include "randomize.h"
 
 void generateLog(int seed, Log* dist){
