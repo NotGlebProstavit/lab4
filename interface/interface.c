@@ -34,11 +34,10 @@ void printUpdateMenu(){
 }
 
 void printSortMenu(){
-	printf("Choose what typy of sort massive will be sorted\n");
+	printf("Choose what type of sort massive will be sorted\n");
 	printf(" 1) Comb sort\n");
 	printf(" 2) Insert sort with binary search\n");
 	printf(" 3) Double selection sort\n");
-	printf(" 4) Previous menu\n");
 }
 
 void printParamSortMenu(){
@@ -48,13 +47,24 @@ void printParamSortMenu(){
 	printf(" 3) TEXT\n");
 }
 
-int inputPointMenu(int maxPoint){
-	while(1){
-		int cmd;
-		printf("Your answer: ");
-		scanf("%d", &cmd);
-		if(cmd >= 1 && cmd <= maxPoint) return cmd;
+int inputIndex(int maxLen){
+    while(1){
+        int cmd;
+        printf("Your answer: ");
+        scanf("%d", &cmd);
+        if(cmd >= 1 && cmd <= maxLen) return cmd;
 
-		printf("This point don't exit\n");
-	}
+        printf("You can insert from 0 to %d\n", maxLen);
+    }
+}
+
+int inputPointMenu(int maxLen){
+    while(1){
+        int cmd;
+        printf("Your answer: ");
+        scanf("%d", &cmd);
+        if(cmd >= 1 && cmd <= maxLen) return cmd;
+
+        printf("This point don't exist\n", maxLen);
+    }
 }

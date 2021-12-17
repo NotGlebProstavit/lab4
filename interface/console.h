@@ -8,6 +8,6 @@
 void consoleInput(Log**, int*);
 void consoleOutput(const Log*, int);
 
-Log* consoleInputLog();
+void consoleInputLog(Log*);
 
 #endif

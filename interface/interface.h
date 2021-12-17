@@ -11,5 +11,6 @@ void printUpdateMenu();
 void printSortMenu();
 void printParamSortMenu();
 int inputPointMenu(int);
+int inputIndex(int);
 
 #endif

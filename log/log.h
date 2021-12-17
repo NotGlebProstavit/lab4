@@ -19,6 +19,7 @@ typedef struct Log{
     char* text;
 } Log;
 
+void copyLog(Log*, const Log*);
 char* logToString(const Log*);
 char* levelToString(ImportanceLevel);
 ImportanceLevel stringToLevel(char*);

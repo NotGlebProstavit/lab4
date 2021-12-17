@@ -1,24 +1,32 @@
 #include "file.h"
 
-int fileInput(Log** logs, const char* filename){
+void fileInput(Log** logs, int* n){
+    char* filename;
+    scanf("%*c");
+    printf("Enter name of file:\n");
+    printf(" - file must be near source file\n");
+    printf(" - Every string must be ID,LEVEL,TEXT\n");
+    filename = readline("Your answer: ");
+
 	int len = 0;
-	char buf[BUFSIZ];
+	char* buf;
 	FILE* fm;
 	if((fm=fopen(filename, "r")) == NULL){
 		printf("Cannot open file\n");
-		return 0;
+        *n = 0;
+		return;
 	}
 	if(*logs != NULL) free(*logs);
 
 	while(!feof(fm)){
-		if(!fgets(buf, BUFSIZ, fm)) break;
+		if(!freadline(fm)) break;
 		len++;
 	}
 	*logs = (Log*) malloc(len*sizeof(Log));
 	rewind(fm);
 	int i = 0;
 	while(!feof(fm)){
-		if(fgets(buf, BUFSIZ, fm)){
+		if((buf = freadline(fm)) != NULL){
 		
 			char* cLine = strdup(buf);
 			cLine[strlen(cLine)-1] = '\0';
@@ -38,10 +46,16 @@ int fileInput(Log** logs, const char* filename){
 	}
 	fclose(fm);
 	printf("Read file is finished\n");
-	return len;
+	*n = len;
 }
 
-void fileOutput(const Log* logs, int n, char* filename){
+void fileOutput(const Log* logs, int n){
+    char* filename;
+
+    printf("Enter name of file:\n");
+    printf(" - file must be near source file or it will be create near\n");
+    filename = readline("Your answer: ");
+
 	FILE* fm = fopen(filename, "w");
 	if(fm == NULL){
 		printf("ERROR\n");

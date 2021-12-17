@@ -14,11 +14,10 @@ void consoleInput(Log** logs, int* len){
 	*logs = (Log*) malloc((*len)*sizeof(Log));
 	for(int i = 0; i < (*len); i++){
 		printf("-------------------------------\n");
-		printf("ID: ");
-		scanf("%d", &((*logs)[i].ID));
-		char* strLevel = readline("LEVEL (DEBUG, INFO, WARN, ERROR, FATAL): ");
-		(*logs)[i].level = stringToLevel(strLevel);
-		(*logs)[i].text = readline("TEXT: ");
+		Log log;
+        consoleInputLog(&log);
+        copyLog(*logs + i, &log);
+        free(log.text);
 	}
 	printf("-------------------------------\n");
 }
@@ -33,7 +32,7 @@ void consoleOutput(const Log* logs, int n){
 	printf("-------------------------------\n");
 }
 
-Log* consoleInputLog(Log* log){
+void consoleInputLog(Log* log){
 	printf("Insert data:\n");
 	printf(" ID: ");
 	int ID;
@@ -44,5 +43,4 @@ Log* consoleInputLog(Log* log){
 	log->level = level;
 	free(strLine);
 	log->text = readline(" TEXT: ");
-	return log;
 }

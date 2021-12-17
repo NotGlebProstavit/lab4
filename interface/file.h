@@ -5,8 +5,10 @@
 #include "stdio.h"
 #include "unistd.h"
 #include "../log/log.h"
+#include "freadline/freadline.h"
+#include "readline/readline.h"
 
-int fileInput(Log**, const char*);
-void fileOutput(const Log*, int, char*);
+void fileInput(Log**, int*);
+void fileOutput(const Log*, int);
 
 #endif
