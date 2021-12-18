@@ -17,7 +17,7 @@ void fileInput(Log** logs, int* n){
 		return;
 	}
 	if(*logs != NULL) {
-        freeAll(logs, *n);
+        freeAll(logs, n);
         printf("Current data have been deleted\n");
     }
 
