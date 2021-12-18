@@ -25,7 +25,7 @@ void fileInput(Log** logs, int* n){
 		if(!freadline(fm)) break;
 		len++;
 	}
-    printf("------> LEN: %d\n", &len);
+    printf("------> LEN: %d\n", len);
 	*logs = (Log*) malloc(len*sizeof(Log));
 	rewind(fm);
 	int i = 0;
