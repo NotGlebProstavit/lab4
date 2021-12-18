@@ -25,6 +25,7 @@ void fileInput(Log** logs, int* n){
 		if(!freadline(fm)) break;
 		len++;
 	}
+    printf("------> LEN: %d\n", &len);
 	*logs = (Log*) malloc(len*sizeof(Log));
 	rewind(fm);
 	int i = 0;
@@ -70,4 +71,5 @@ void fileOutput(const Log* logs, int n){
 		free(str);
 	}
 	fclose(fm);
+    free(filename);
 }
