@@ -121,7 +121,7 @@ void update(Log** logs, int* len, int* sorted){
 }
 
 int main(){
-    Log* logs; int len = 0;
+    Log* logs = NULL; int len = 0;
     int sorted = 0;
     while(1){
         printMenu();
