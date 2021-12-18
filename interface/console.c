@@ -11,10 +11,7 @@ void consoleInput(Log** logs, int* len){
 	*logs = (Log*) malloc((*len)*sizeof(Log));
 	for(int i = 0; i < (*len); i++){
 		printf("-------------------------------\n");
-		Log log;
-        consoleInputLog(&log);
-        copyLog(*logs + i, &log);
-        free(log.text);
+        consoleInputLog(*logs + i);
 	}
 	printf("-------------------------------\n");
 }
