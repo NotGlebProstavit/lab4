@@ -17,7 +17,7 @@ void* combSort(void* base, size_t n, size_t size, int(*comp)(const void*, const 
                 swap(base+i*size, base+(i+step)*size, size);
             }
         }
-        step /= factor;
+        step = (int)(step - factor);
     }
     return base;
 }
@@ -74,6 +74,5 @@ void* doubleSelectionSort(void* base, size_t n, size_t size, int(*comp)(const vo
             swap(base+(n-1-i)*size, base+maxId*size, size);
         }
     }
-
     return base;
 }

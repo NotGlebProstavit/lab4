@@ -17,7 +17,7 @@ double getAverage(int len, void*(*sort)(void*, size_t, size_t, int(*)(const void
 void timingOne(void*(*sort)(void*, size_t, size_t, int(*)(const void*, const void*)), char* s, int k){
     printf("len,avgTime,sorts\n");
     for(int i = 1; i <= 10; i++){
-        int len = i*10000;
+        int len = i*1000;
         printf("%d,%lf,%s\n",len, getAverage(len,sort,k), s);
     }
 }

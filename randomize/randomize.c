@@ -13,6 +13,6 @@ void generateLog(int seed, Log* dist){
 
 void generateNLog(int seed, int len, Log* dist){
     for(int i = 0; i < len; i++){
-        generateLog(seed+i, dist + i);
+        generateLog(seed, dist + i);
     }
 }
