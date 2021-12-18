@@ -92,12 +92,12 @@ void input(Log** logs, int* len){
             break;
         }
         case 3:{
+            if(*logs != NULL)
+                freeAll(logs, len);
             printf("Enter len of massive: ");
             scanf("%d", len);
             printf("Enter seed of randomize: ");
             int seed; scanf("%d", &seed);
-            if(*logs != NULL)
-                freeAll(logs, len);
             *logs = (Log*) malloc(*len * sizeof(Log));
             generateNLog(seed, *len, *logs);
             break;
