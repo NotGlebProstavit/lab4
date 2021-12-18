@@ -35,5 +35,6 @@ void freeAll(Log** logs, int *len){
         free((*logs)[i].text);
     }
     free(*logs);
+    *logs = NULL;
     *len = 0;
 }
