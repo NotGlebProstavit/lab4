@@ -4,6 +4,7 @@
 #include "stdio.h"
 #include "../log/log.h"
 #include "readline/readline.h"
+#include "../update/update.h"
 
 void consoleInput(Log**, int*);
 void consoleOutput(const Log*, int);

@@ -1,7 +1,6 @@
 #ifndef LAB4_INTERFACE_H
 #define LAB4_INTERFACE_H
 
-
 #include "stdio.h"
 
 void printMenu();

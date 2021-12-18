@@ -30,10 +30,10 @@ void deleteNFrom(Log** logs, int* len, int from, int n){
     *logs = (Log*) realloc(*logs, (*len)*sizeof(Log));
 }
 
-void freeAll(Log** logs, int len){
-    for(int i = 0; i < len; i++){
+void freeAll(Log** logs, int *len){
+    for(int i = 0; i < *len; i++){
         free((*logs)[i].text);
     }
     free(*logs);
-    len = 0;
+    *len = 0;
 }

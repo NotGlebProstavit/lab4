@@ -50,7 +50,6 @@ void fileInput(Log** logs, int* n){
 	printf("Read file is finished\n");
 	*n = len;
     free(filename);
-    free(fm);
 }
 
 void fileOutput(const Log* logs, int n){
@@ -72,5 +71,4 @@ void fileOutput(const Log* logs, int n){
 	}
 	fclose(fm);
     free(filename);
-    free(fm);
 }

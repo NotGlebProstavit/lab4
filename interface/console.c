@@ -2,10 +2,7 @@
 
 void consoleInput(Log** logs, int* len){
 	if(*logs != NULL){
-		for(int i = 0; i < *len; i++){
-			free((*logs)[i].text);
-		}
-		free(logs);
+		freeAll(logs, len);
 	}
 
 	printf("How many logs do you input?\n");

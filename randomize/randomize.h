@@ -1,5 +1,6 @@
 #ifndef LAB4_RANDOMIZE_H
 #define LAB4_RANDOMIZE_H
+
 #include "../log/log.h"
 #include "string.h"
 

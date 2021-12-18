@@ -14,19 +14,16 @@ double getAverage(int len, void*(*sort)(void*, size_t, size_t, int(*)(const void
     return sum/8;
 }
 
+void timingOne(void*(*sort)(void*, size_t, size_t, int(*)(const void*, const void*)), char* s){
+    for(int i = 1; i <= 10; i++){
+        int len = i*10000;
+        printf("%d,%lf,%s\n",len, getAverage(len,sort), s);
+    }
+}
+
 void timing(){
     printf("len,avgTime,sorts\n");
-    for(int i = 1; i <= 10; i++){
-        int len = i*10000;
-        printf("%d,%lf,%s\n",len, getAverage(len,combSort), "combSort");
-    }
-    for(int i = 1; i <= 10; i++){
-        int len = i*10000;
-        printf("%d,%lf,%s\n",len, getAverage(len,insertWithBinarySearchSort), "insertWithBinarySearchSort");
-    }
-    for(int i = 1; i <= 10; i++){
-        int len = i*10000;
-        printf("%d,%lf,%s\n",len, getAverage(len,doubleSelectionSort), "doubleSelectionSort");
-    }
-
+    timingOne(combSort, "combSort");
+    timingOne(insertWithBinarySearchSort, "insertWithBinarySearchSort");
+    timingOne(doubleSelectionSort, "doubleSelectionSort");
 }
