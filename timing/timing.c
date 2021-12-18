@@ -28,7 +28,7 @@ void timing(){
     printf(" 2) Insert sort with binary search\n");
     printf(" 3) Double selection sort\n");
     int n = inputPointMenu(3);
-    printf("How many dimensions do it do for a value?\n");
+    printf("How many dimensions do it do for a value?\nYour answer: ");
     int k;
     scanf("%d", &k);
     char *s = NULL;
