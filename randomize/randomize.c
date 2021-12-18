@@ -5,7 +5,7 @@ void generateLog(int seed, Log* dist){
     dist->ID = rand() % 100000;
     dist->level = rand() % 5;
     int text_len = rand() % 20 + 1;
-    dist->text = calloc(text_len, sizeof(char));
+    dist->text = calloc(text_len+1, sizeof(char));
     for(int i = 0; i < text_len; i++){
         dist->text[i] = (char)((rand() % (0x5A - 0x41) + 0x41) + (rand()%2)*0x20);
     }
