@@ -25,7 +25,6 @@ void fileInput(Log** logs, int* n){
 		if(!freadline(fm)) break;
 		len++;
 	}
-    printf("------> LEN: %d\n", len);
 	*logs = (Log*) malloc(len*sizeof(Log));
 	rewind(fm);
 	int i = 0;
@@ -51,6 +50,7 @@ void fileInput(Log** logs, int* n){
 	printf("Read file is finished\n");
 	*n = len;
     free(filename);
+    free(fm);
 }
 
 void fileOutput(const Log* logs, int n){
@@ -72,4 +72,5 @@ void fileOutput(const Log* logs, int n){
 	}
 	fclose(fm);
     free(filename);
+    free(fm);
 }
