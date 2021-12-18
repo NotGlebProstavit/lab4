@@ -18,6 +18,7 @@ char* freadline(FILE* fm){
             res = realloc(res, str_len + 1);
             memcpy(res + len, buf, chunk_len);
             len = str_len;
+            res[str_len] = '\0';
         }
         else {
             fscanf(fm, "%*c");

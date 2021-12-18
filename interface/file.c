@@ -40,11 +40,13 @@ void fileInput(Log** logs, int* n){
 			(*logs)[i].text = strdup(text);
 			i++;
 			free(cLine);
+            free(buf);
 		}
 	}
 	fclose(fm);
 	printf("Read file is finished\n");
 	*n = len;
+    free(filename);
 }
 
 void fileOutput(const Log* logs, int n){
