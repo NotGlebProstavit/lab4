@@ -53,6 +53,8 @@ Log* update(Log* logs, int* len, int* sorted){
             Log* log = (Log*) malloc(sizeof(Log));
             consoleInputOne(log);
             logs = insertByIndex(logs, len, log, index);
+            free(log->text);
+            free(log);
             break;
         }
         case 2:{
@@ -64,6 +66,8 @@ Log* update(Log* logs, int* len, int* sorted){
             Log* log = (Log*) malloc(sizeof(Log));
             consoleInputOne(log);
             logs = insertSorted(logs, len, log, comp);
+            free(log->text);
+            free(log);
             break;
         }
         case 3:{

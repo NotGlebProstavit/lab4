@@ -56,7 +56,7 @@ char* logToString(const Log* log){
 void copyLog(Log* dist, const Log* src){
     dist->ID = src->ID;
     dist->level = src->level;
-    if(!dist->text) free(dist->text);
+    if(dist->text) free(dist->text);
     dist->text = (char*) calloc(strlen(src->text)+1, sizeof(char));
     strcpy(dist->text, src->text);
 }
