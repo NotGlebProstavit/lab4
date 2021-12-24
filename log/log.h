@@ -23,10 +23,13 @@ typedef struct Log{
 void copyLog(Log*, const Log*);
 char* logToString(const Log*);
 char* levelToString(ImportanceLevel);
+Log* stringToLog(char*, Log*);
 ImportanceLevel stringToLevel(char*);
 
 int compID(const Log*, const Log*);
 int compLevel(const Log*, const Log*);
 int compText(const Log*, const Log*);
+
+int(*getComp(int))(const Log*, const Log*);
 
 #endif

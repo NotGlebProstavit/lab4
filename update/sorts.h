@@ -14,4 +14,6 @@ int binarySearch(void* base, size_t n, size_t size, int(*comp)(const void*, cons
 int minIndex(void* base, int start, int end, size_t size, int(*comp)(const void*, const void*));
 int maxIndex(void* base, int start, int end, size_t size, int(*comp)(const void*, const void*));
 
+void*(*getSort(int))(void*, size_t, size_t, int(*)(const void*, const void*));
+
 #endif

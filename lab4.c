@@ -1,6 +1,9 @@
 #include "stdio.h"
-#include "interface/interface.h"
 #include "timing/timing.h"
+#include "interface/menu.h"
+#include "interface/input.h"
+#include "interface/output.h"
+#include "update/update.h"
 
 
 int main(){
@@ -8,11 +11,11 @@ int main(){
     int sorted = 0;
     while(1){
         printMenu();
-        int n = inputPointMenu(5);
+        int n = validInput(1, 5);
         switch (n) {
             case 1:{
                 printf("<------------------------------------------------>\n");
-                input(&logs, &len);
+                logs = input(logs, &len);
                 sorted = 0;
                 printf("<------------------------------------------------>\n");
                 break;
@@ -25,7 +28,7 @@ int main(){
             }
             case 3:{
                 printf("<------------------------------------------------>\n");
-                update(&logs, &len, &sorted);
+                logs = update(logs, &len, &sorted);
                 printf("<------------------------------------------------>\n");
                 break;
             }
@@ -36,8 +39,11 @@ int main(){
                 break;
             }
             case 5:{
-                freeAll(&logs, &len);
+                freeAll(logs, &len);
                 return 0;
+            }
+            default:{
+                printf("This point doesn't exist\n");
             }
         }
     }

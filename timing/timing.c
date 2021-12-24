@@ -10,7 +10,7 @@ double getAverage(int len, void*(*sort)(void*, size_t, size_t, int(*)(const void
         clock_t end = clock();
         sum += (double)(end-begin)/CLOCKS_PER_SEC;
     }
-    freeAll(&logs, &len);
+    freeAll(logs, &len);
     return sum/k;
 }
 
@@ -27,7 +27,7 @@ void timing(){
     printf(" 1) Comb sort\n");
     printf(" 2) Insert sort with binary search\n");
     printf(" 3) Double selection sort\n");
-    int n = inputPointMenu(3);
+    int n = validInput(1, 3);
     printf("How many dimensions do it do for a value?\nYour answer: ");
     int k;
     scanf("%d", &k);

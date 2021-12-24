@@ -4,7 +4,7 @@
 #include "../log/log.h"
 #include "string.h"
 
-void generateLog(int, Log*);
-void generateNLog(int, int, Log*);
+Log* generateLog(int, Log*);
+Log* generateNLog(int, int, Log*);
 
 #endif //LAB4_RANDOMIZE_H

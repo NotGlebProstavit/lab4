@@ -5,9 +5,8 @@
 #include "../log/log.h"
 #include "../randomize/randomize.h"
 #include "time.h"
-#include "../update/update.h"
 #include "../update/sorts.h"
-#include "../interface/interface.h"
+#include "../interface/input.h"
 
 double getAverage(int, void*(*)(void*, size_t, size_t, int(*)(const void*, const void*)), int);
 void timingOne(void*(*)(void*, size_t, size_t, int(*)(const void*, const void*)), char*, int);

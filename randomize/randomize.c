@@ -1,6 +1,6 @@
 #include "randomize.h"
 
-void generateLog(int seed, Log* dist){
+Log* generateLog(int seed, Log* dist){
     srand(seed);
     dist->ID = rand() % 100000;
     dist->level = rand() % 5;
@@ -9,10 +9,13 @@ void generateLog(int seed, Log* dist){
     for(int i = 0; i < text_len; i++){
         dist->text[i] = (char)((rand() % (0x5A - 0x41) + 0x41) + (rand()%2)*0x20);
     }
+    return dist;
 }
 
-void generateNLog(int seed, int len, Log* dist){
+Log* generateNLog(int seed, int len, Log* dist){
+//    if(dist != NULL) dist = freeAll(dist);
     for(int i = 0; i < len; i++){
-        generateLog(seed+rand()%len, dist + i);
+        generateLog(seed+((i * len * 1234) % seed) , dist + i);
     }
+    return dist;
 }

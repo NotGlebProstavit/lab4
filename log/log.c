@@ -56,6 +56,22 @@ char* logToString(const Log* log){
 void copyLog(Log* dist, const Log* src){
     dist->ID = src->ID;
     dist->level = src->level;
-    if(dist->text != NULL) free(dist->text);
+    if(!dist->text) free(dist->text);
     dist->text = strdup(src->text);
+}
+
+Log* stringToLog(char* data, Log* log){
+    sscanf(strtok(data, ","), "%d", &(log->ID));
+    log->level = stringToLevel(strtok(NULL, ","));
+    log->text = strdup(strtok(NULL, ","));
+    return log;
+}
+
+int(*getComp(int n))(const Log*, const Log*){
+    switch (n) {
+        case 1: return compID;
+        case 2: return compLevel;
+        case 3: return compText;
+        default: return compID;
+    }
 }

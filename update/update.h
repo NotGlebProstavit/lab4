@@ -2,11 +2,15 @@
 #define LAB4_UPDATE_H
 
 #include "../log/log.h"
-#include "string.h"
+#include "sorts.h"
+#include "../interface/input.h"
 
-void insertByIndex(Log**, int*, int, const Log*);
-void insertToSorted(Log**, int*, const Log*, int(*)(const Log*, const Log*));
-void deleteNFrom(Log**, int*, int, int);
-void freeAll(Log**, int*);
+void freeAll(Log*, int*);
 
-#endif
+Log* insertByIndex(Log*, int*, const Log*, int);
+Log* insertSorted(Log*, int*, const Log*, int(*)(const Log*, const Log*));
+Log* deleteNM(Log*, int*, int, int);
+
+Log* update(Log*, int*, int*);
+
+#endif //LAB4_UPDATE_H
