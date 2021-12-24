@@ -83,10 +83,10 @@ Log* update(Log* logs, int* len, int* sorted){
         }
         case 4:{
             printParamSortMenu();
-            int(*comp)(const Log*, const Log*) = getComp(validInput(1, 3));
-            printSortMenu();
             *sorted = validInput(1, 3);
-            void*(*sort)(void*, size_t, size_t, int(*)(const void*, const void*)) = getSort(*sorted);
+            int(*comp)(const Log*, const Log*) = getComp(*sorted);
+            printSortMenu();
+            void*(*sort)(void*, size_t, size_t, int(*)(const void*, const void*)) = getSort(validInput(1, 3));
             sort(logs, *len, sizeof(Log), (int (*)(const void *, const void *)) comp);
             break;
         }
