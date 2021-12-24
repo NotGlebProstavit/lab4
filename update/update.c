@@ -10,6 +10,7 @@ void freeAll(Log** logs, int* len){
 
 Log* insertByIndex(Log* logs, int* len, const Log* log, int index){
     logs = (Log*) realloc(logs, (*len + 1)* sizeof(Log));
+    logs[*len].text = (char*) calloc(1, sizeof(char));
     for(int i = *len; i > index; i--){
         copyLog(logs + i, logs + i - 1);
     }
