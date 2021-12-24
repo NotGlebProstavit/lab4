@@ -10,7 +10,7 @@ double getAverage(int len, void*(*sort)(void*, size_t, size_t, int(*)(const void
         clock_t end = clock();
         sum += (double)(end-begin)/CLOCKS_PER_SEC;
     }
-    freeAll(logs, &len);
+    freeAll(&logs, &len);
     return sum/k;
 }
 
