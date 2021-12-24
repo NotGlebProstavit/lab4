@@ -36,7 +36,7 @@ Log* consoleInput(Log* logs, int* len){
     printf("How many elements do you want create?\n");
     printf("Your answer: ");
     scanf("%d", &n);
-    logs = (Log*) realloc(logs, n);
+    logs = (Log*) realloc(logs, n* sizeof(Log));
     for(int i = 0; i < n; i++){
         consoleInputOne(logs + i);
     }
