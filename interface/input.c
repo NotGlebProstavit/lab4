@@ -10,7 +10,8 @@ Log* input(Log* logs, int* len){
             break;
         }
         case 2:{
-            FILE* fm = validFile();
+            FILE* fm;
+            fm = validFile(fm);
             logs = fileInput(fm, logs, len);
             fclose(fm);
             break;
@@ -76,8 +77,8 @@ char* validInputLevel(){
     }
 }
 
-FILE* validFile(){
-    FILE* fm; char* filename;
+FILE* validFile(FILE* fm){
+   	char* filename;
     while(1){
         printFileField(1);
         filename = readline("");
@@ -86,7 +87,6 @@ FILE* validFile(){
             return fm;
         }
         printf("This file doesn't exist\n");
-        fclose(fm);
         free(filename);
     }
 }

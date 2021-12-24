@@ -18,6 +18,6 @@ Log* fileInput(FILE*, Log*, int*);
 
 int validInput(int, int);
 char* validInputLevel();
-FILE* validFile();
+FILE* validFile(FILE*);
 
 #endif //LAB4_INPUT_H
