@@ -17,6 +17,10 @@ void fileOutput(FILE* fm, Log* logs, int len){
 }
 
 void output(Log* logs, int len){
+    if(logs == NULL){
+        printf("Array is empty\n");
+        return;
+    }
     printOutputMenu();
     int n = validInput(1, 3);
     switch (n) {

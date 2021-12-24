@@ -5,6 +5,7 @@ void freeAll(Log** logs, int* len){
         free((*logs)[i].text);
     }
     free(*logs);
+    *logs = NULL;
     *len = 0;
 }
 
@@ -45,6 +46,10 @@ Log* deleteNM(Log* logs, int* len, int count, int index){
 }
 
 Log* update(Log* logs, int* len, int* sorted){
+    if(logs == NULL){
+        printf("Array if empty\n");
+        return logs;
+    }
     printUpdateMenu();
     int n = validInput(1, 5);
     switch (n) {
