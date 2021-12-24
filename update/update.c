@@ -50,7 +50,7 @@ Log* update(Log* logs, int* len, int* sorted){
         case 1:{
             printf("Where are you input new element?\n");
             int index = validInput(0, *len);
-            Log* log = (Log*) malloc(sizeof(Log));
+            Log* log = (Log*) calloc(1, sizeof(Log));
             consoleInputOne(log);
             logs = insertByIndex(logs, len, log, index);
             free(log->text);
@@ -63,7 +63,7 @@ Log* update(Log* logs, int* len, int* sorted){
                 break;
             }
             int(*comp)(const Log*, const Log*) = getComp(*sorted);
-            Log* log = (Log*) malloc(sizeof(Log));
+            Log* log = (Log*) calloc(1, sizeof(Log));
             consoleInputOne(log);
             logs = insertSorted(logs, len, log, comp);
             free(log->text);
