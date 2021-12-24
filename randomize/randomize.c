@@ -13,6 +13,7 @@ Log* generateLog(int seed, Log* dist){
 }
 
 Log* generateNLog(int seed, int len, Log* dist){
+    dist = (Log*) calloc(len, sizeof(Log));
     for(int i = 0; i < len; i++){
         generateLog(seed+((i * len * 1234) % seed) , dist + i);
     }
