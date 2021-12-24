@@ -65,7 +65,7 @@ Log* stringToLog(char* data, Log* log){
     sscanf(strtok(data, ","), "%d", &(log->ID));
     log->level = stringToLevel(strtok(NULL, ","));
     char* text = strtok(NULL, ",");
-    log->text = (char*) calloc(strlen(data)+1, sizeof(char));
+    log->text = (char*) calloc(strlen(text)+1, sizeof(char));
     strcpy(log->text, text);
     return log;
 }
