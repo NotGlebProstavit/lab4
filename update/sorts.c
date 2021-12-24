@@ -22,7 +22,7 @@ void* combSort(void* base, size_t n, size_t size, int(*comp)(const void*, const 
     return base;
 }
 
-int binarySearch(void* base, size_t n, size_t size, int(*comp)(const void*, const void*), int left, int right, void* x){
+int binarySearch(void* base, size_t n, size_t size, int(*comp)(const void*, const void*), void* x){
     int L = -1;
     int R = n;
     while(R - L > 1){
@@ -38,7 +38,7 @@ int binarySearch(void* base, size_t n, size_t size, int(*comp)(const void*, cons
 
 void* insertWithBinarySearchSort(void* base, size_t n, size_t size, int(*comp)(const void*, const void*)){
     for(int i = 1; i < n; i++){
-        int k = binarySearch(base, i, size, comp, 0, i-1, base+i*size);
+        int k = binarySearch(base, i, size, comp, base+i*size);
         if(k < 0) continue;
         for(int j = i; j > k; j--){
             swap(base+(j-1)*size, base+(j)*size, size);

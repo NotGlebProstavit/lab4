@@ -10,7 +10,7 @@ void* insertWithBinarySearchSort(void* base, size_t n, size_t size, int(*comp)(c
 void* doubleSelectionSort(void* base, size_t n, size_t size, int(*comp)(const void*, const void*));
 
 void swap(void* a, void* b, size_t size);
-int binarySearch(void* base, size_t n, size_t size, int(*comp)(const void*, const void*), int left, int right, void* x);
+int binarySearch(void* base, size_t n, size_t size, int(*comp)(const void*, const void*), void* x);
 int minIndex(void* base, int start, int end, size_t size, int(*comp)(const void*, const void*));
 int maxIndex(void* base, int start, int end, size_t size, int(*comp)(const void*, const void*));
 

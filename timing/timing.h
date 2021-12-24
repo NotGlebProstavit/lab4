@@ -8,8 +8,8 @@
 #include "../update/sorts.h"
 #include "../interface/input.h"
 
-double getAverage(int, void*(*)(void*, size_t, size_t, int(*)(const void*, const void*)), int);
-void timingOne(void*(*)(void*, size_t, size_t, int(*)(const void*, const void*)), char*, int);
+double getAverage(int, int, void*(*)(void*, size_t, size_t, int(*)(const void*, const void*)), int);
+void timingOne(int, void*(*)(void*, size_t, size_t, int(*)(const void*, const void*)), char*, int);
 void timing();
 
 #endif //LAB4_TIMING_H
