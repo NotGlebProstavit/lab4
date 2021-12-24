@@ -57,13 +57,16 @@ void copyLog(Log* dist, const Log* src){
     dist->ID = src->ID;
     dist->level = src->level;
     if(!dist->text) free(dist->text);
-    dist->text = strdup(src->text);
+    dist->text = (char*) calloc(strlen(src->text)+1, sizeof(char));
+    strcpy(dist->text, src->text);
 }
 
 Log* stringToLog(char* data, Log* log){
     sscanf(strtok(data, ","), "%d", &(log->ID));
     log->level = stringToLevel(strtok(NULL, ","));
-    log->text = strdup(strtok(NULL, ","));
+    char* text = strtok(NULL, ",");
+    log->text = (char*) calloc(strlen(data)+1, sizeof(char));
+    strcpy(log->text, text);
     return log;
 }
 

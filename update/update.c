@@ -1,10 +1,10 @@
 #include "update.h"
 
-void freeAll(Log* logs, int* len){
+void freeAll(Log** logs, int* len){
     for(int i = 0; i < *len; i++){
-        free(logs[i].text);
+        free((*logs)[i].text);
     }
-    free(logs);
+    free(*logs);
     *len = 0;
 }
 

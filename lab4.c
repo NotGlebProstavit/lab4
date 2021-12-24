@@ -39,7 +39,7 @@ int main(){
                 break;
             }
             case 5:{
-                freeAll(logs, &len);
+                freeAll(&logs, &len);
                 return 0;
             }
             default:{

@@ -1,7 +1,7 @@
 #include "input.h"
 
 Log* input(Log* logs, int* len){
-    if(*len != 0) freeAll(logs, len);
+    if(*len != 0) freeAll(&logs, len);
     printInputMenu();
     int n = validInput(1, 4);
     switch (n) {
