@@ -22,7 +22,6 @@ Log* insertByIndex(Log* logs, int* len, const Log* log, int index){
 
 Log* insertSorted(Log* logs, int* len, const Log* log, int(*comp)(const Log*, const Log*)){
     if(comp(log, logs) < 0) logs = insertByIndex(logs, len, log, 0);
-    else if(comp(log, logs + *len - 1) > 0) logs = insertByIndex(logs, len, log, *len);
     else {
         int index = 0;
         for (; index < *len - 1; index++) {
